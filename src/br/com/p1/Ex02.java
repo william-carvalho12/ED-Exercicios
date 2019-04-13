@@ -1,5 +1,7 @@
 package br.com.p1;
 
+import br.com.util.Vetores;
+
 public class Ex02 {
 	
 	/*
@@ -11,8 +13,17 @@ public class Ex02 {
 	 */
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int[] vetor = new int[10];
+		vetor = Vetores.carregarVetor(vetor);
+		
+		Vetores.mostraVetor(vetor);
+		
+		System.out.printf("\nSoma = %d", mostrarSoma(vetor, vetor.length));
+	}
+	
+	static int mostrarSoma(int[] vetor, int i) {
+		i--;
+		return (i<0) ? 0 : vetor[i] + mostrarSoma(vetor, i);
 	}
 
 }

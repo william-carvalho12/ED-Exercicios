@@ -1,6 +1,6 @@
 package br.com.p1;
 
-import java.util.Random;
+import br.com.util.Vetores;
 
 public class Ex01 {
 
@@ -13,16 +13,16 @@ public class Ex01 {
 	 */
 	
 	public static void main(String[] args) {
-		Random rand = new Random();
+		
 		int[] vetor = new int[10];
-		for(int i = 0; i < vetor.length; i++) {
-			vetor[i] = rand.nextInt(21);
-		}
-		for(int v : vetor) {
-			System.out.printf("%d - ", v);
-		}
+		vetor = Vetores.carregarVetor(vetor);
+		
+		Vetores.mostraVetor(vetor);
+		
 		System.out.printf("\nMaior valor: %d", maiorValor(vetor.length, vetor[vetor.length-1], vetor));
 	}
+	
+	
 	
 	static int maiorValor(int i, int m, int[] v) {
 		i--;
